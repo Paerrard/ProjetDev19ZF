@@ -1,0 +1,52 @@
+<?php 
+	
+$fieldDecorators = array('ViewHelper',
+						 'Label',
+						 array('Description', array( 'tag' => 'span')),
+						 'Errors',
+						 array('HtmlTag', array( 'tag' => 'li')));
+
+$this->form->user_nom->clearDecorators()
+					 ->setLabel('Votre nom');
+$this->form->user_nom->setDecorators($fieldDecorators);
+
+$this->form->user_prenom->clearDecorators()
+						->setLabel('Votre prénom');
+$this->form->user_prenom->setDecorators($fieldDecorators);
+						
+$this->form->user_login->clearDecorators()
+					   ->setLabel('Votre login');
+$this->form->user_login->setDecorators($fieldDecorators);
+
+$this->form->user_password->clearDecorators()
+						  ->setLabel('Votre password');
+$this->form->user_password->setDecorators($fieldDecorators);
+
+$this->form->user_email->clearDecorators()
+					   ->setLabel('Votre E-mail');
+$this->form->user_email->setDecorators($fieldDecorators);
+						     						  
+$this->form->addDisplayGroup( array('user_submit', 'user_reset'), 'buttons');
+$this->form->user_submit->clearDecorators()
+					    ->setLabel('Envoyer')
+					    ->setDecorators(array('ViewHelper'));
+$this->form->user_reset->clearDecorators()
+					   ->setLabel('RAZ')
+					   ->setDecorators(array('ViewHelper'));						  
+$this->form->getDisplayGroup('buttons')->clearDecorators()
+									   ->setDecorators(array('FormElements', 
+										   						array('HtmlTag',array( 'tag' => 'li'))
+										   					)
+										   			);					     			 
+$this->form->clearDecorators();
+$this->form->setDecorators(array('FormElements',	
+								  array(array('elements' => 'HtmlTag'), 
+								     	array( 'tag' => 'ul')),
+							   	 'Form',
+							   	  array(array('wrapper' => 'HtmlTag'), 
+							   		 	array( 'tag' => 'div', 'class' => 'test')),
+							   	)
+						   );
+?>
+<p><?php echo $this->message ?></p>
+<?= $this->form ?>

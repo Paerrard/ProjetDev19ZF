@@ -1,18 +1,10 @@
 <?php
 
+// la classe porte le nom du fichier
 class IndexController extends Zend_Controller_Action
 {
-
-    public function init()
-    {
-        /* Initialize action controller here */
-    }
-
-    public function indexAction()
-    {
-        // action body
-    }
-
-
+	// fonction public correspondant à l'action qui va déclencher une vue
+	public function indexAction()
+	{
+	}
 }
-

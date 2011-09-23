@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <main>
+        <homepage>
+            <label>Homepage</label>
+            <controller>index</controller>
+            <action>index</action>
+            <route>homepage</route>
+        </homepage>
+        <blog>
+            <label>Blog</label>
+            <id>blog</id>
+            <controller>blog</controller>
+            <action>index</action>
+            <route>blog</route>
+            <class>parent</class>
+        </blog>
+        <photos>
+            <label>Photos</label>
+            <controller>photos</controller>
+            <action>index</action>
+            <route>photos</route>
+        </photos>
+        <about>
+            <label>About</label>
+            <controller>about</controller>
+            <action>index</action>
+            <route>about</route>
+        </about>
+        <contact>
+            <label>Contact</label>
+            <controller>contact</controller>
+            <action>index</action>
+            <route>contact</route>
+        </contact>
+        <register>
+        	<label>Inscription</label>
+        	<controller>register</controller>
+        	<action>index</action>
+        	<route>register</route>
+        </register>
+    </main>
+</config>

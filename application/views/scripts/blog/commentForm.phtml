@@ -1,0 +1,56 @@
+<?php 
+	$fieldDecorator = array(
+						'ViewHelper',
+					  	'Label',
+					    array('Description', array( 'tag' => 'span')),
+					  	'Errors',
+   		 			    array('HtmlTag', array( 'tag' => 'li') )
+   		 			  );
+		
+	$this->form->com_title->clearDecorators()
+						  ->setLabel('Entrez votre titre : ');
+						  
+	$this->form->com_title->setDecorators($fieldDecorator);					  
+
+	$this->form->com_email->clearDecorators()
+						  ->setLabel('Entrez votre email : ');
+						  
+	$this->form->com_email->setDecorators($fieldDecorator);					  
+
+	$this->form->com_content->clearDecorators()
+							->setLabel('Votre commentaire')
+					 		->setDescription('Entrez un texte entre 3 et 60 caractères')
+					 		->setAttrib('cols', 70)
+					 		->setAttrib('rows', 8);
+	$this->form->com_content->setDecorators($fieldDecorator);
+
+	$this->form->addDisplayGroup(array('com_submit', 'com_reset'), 'buttons');						     			 
+						     			 
+	$this->form->com_submit->clearDecorators()
+							->setLabel('Envoyer')
+							->setDecorators(array('ViewHelper'));
+							
+	$this->form->com_reset->clearDecorators()
+							->setLabel('RAZ')
+							->setDecorators(array('ViewHelper'));
+							
+	$this->form->getDisplayGroup('buttons')->clearDecorators()
+										   ->setDecorators(array('FormElements',    
+										                          array('HtmlTag',
+										                          		array('tag' => 'li')
+										                          	    )
+										                         )
+										                  );							
+													     													   				   						     			 
+	$this->form->clearDecorators();
+	$this->form->setDecorators(array('FormElements',
+	                                  array(array('elements' => 'HtmlTag'),array('tag' => 'ul')),
+	                                  'Form',
+	                                  array(array('wrapper' =>'HtmlTag'), array('tag' =>'div', 'class' => 'test'))
+	                                  )
+	                           );
+						      
+
+?>
+
+<?= $this->form ?>

@@ -1,0 +1,9 @@
+<h3>Liste des catégories du blog</h3>
+<?php 
+foreach ($this->categories as $category) {
+	echo '<h4><a href="' . $this->url(array('id' => $category->getId()), 'category'). '">' . 
+	$category->getLabel() . 
+	'</a></h4>';
+	echo '<p>' .  count($category->getArticles()) . ' articles dans la catégorie</p>';
+	echo '<hr />';
+}

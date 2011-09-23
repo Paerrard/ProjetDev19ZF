@@ -1,0 +1,34 @@
+<?php $this->headTitle($this->article->getTitle())?>
+
+<h3><?= $this->article->getTitle()?></h3>
+<p>
+<?= $this->article->getContent(); $this->par ?>
+</p>
+<hr />
+<?php foreach ($this->article->getComments() as $comment) : ?>
+<h4><?php echo $this->translate('comment')?> : <?= $comment->getContent() ?></h4>
+<?php endforeach;?>
+<hr />
+<?php echo $this->partial('blog/commentForm.phtml','default',$this)?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<?php
+$fieldDecorator = array(
+						'ViewHelper',
+					  	'Label',
+					    array('Description', array( 'tag' => 'span')),
+					  	'Errors',
+   		 			    array('HtmlTag', array( 'tag' => 'li') )
+   		 			  );
+
+$this->userform->user_firstname->clearDecorators()
+                           ->setLabel('First Name')
+                           ->setDecorators($fieldDecorator);
+                       
+$this->userform->user_lastname->clearDecorators()
+                          ->setLabel('Last Name')
+                          ->setDecorators($fieldDecorator);
+
+$this->userform->user_email->clearDecorators()
+                          ->setLabel('Email')
+                          ->setDecorators($fieldDecorator);
+                          
+$this->userform->user_login->clearDecorators()
+                          ->setLabel('Login')
+                          ->setDecorators($fieldDecorator);
+
+$this->userform->user_password->clearDecorators()
+                          ->setLabel('Password')
+                          ->setDecorators($fieldDecorator);
+
+
+$this->userform->addDisplayGroup(array('user_submit', 'user_reset'), 'buttons');	
+
+$this->userform->user_submit->clearDecorators()
+							->setLabel('Register')
+							->setDecorators(array('ViewHelper'));
+							
+$this->userform->user_reset->clearDecorators()
+							->setLabel('RAZ')
+							->setDecorators(array('ViewHelper'));
+							
+						
+$this->userform->getDisplayGroup('buttons')->clearDecorators()
+										   ->setDecorators(array('FormElements',    
+										                          array('HtmlTag',
+										                          		array('tag' => 'li')
+										                          	    )
+										                         )
+										                  );
+                          
+?>
+
+<?= $this->userform ?>

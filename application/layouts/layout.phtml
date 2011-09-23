@@ -1,0 +1,66 @@
+<?php echo $this->doctype() . PHP_EOL?>
+<html>
+<head>
+    <?php echo $this->headTitle() . PHP_EOL ?>
+    <?php echo $this->headMeta() . PHP_EOL ?>
+    <?php echo $this->headLink() . PHP_EOL ?>
+    <?php echo $this->headStyle() . PHP_EOL ?>
+	<?php echo $this->headScript() . PHP_EOL ?>
+</head>
+<body>
+    <div id="header">
+        <a href="<?php echo $this->url(array(), 'homepage') ?>">
+        <img id="logo" src="/images/logo.gif" alt="logo" />
+        </a> 
+        <div id="menu">
+			<?php echo $this->navigation()->menu()->renderMenu(null, array('ulClass' => 'menu')) ?>
+		</div>
+        <h1><a href="#">Micka's Project</a></h1>
+        <p id="subtitle">Template designed The Zend Team</p>
+
+        <form id="search" method="get" action="#">
+            <input type="text" class="text" />
+            <input type="submit" class="submit" value="Search" />
+        </form>
+    </div><!-- header -->
+    <div id="main"><div id="main2">	
+            <div id="sidebar">
+            	<ul>
+					<li>
+						<h2>Aliquam tempus</h2>
+						<p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper consectetuer hendrerit.</p>
+					</li>
+					<li>
+						<h2>Categories</h2>
+						<ul>
+							<li><a href="#">Aliquam libero</a></li>
+							<li><a href="#">Consectetuer adipiscing elit</a></li>
+						</ul>
+					</li>
+				</ul>
+            </div><!-- sidebar -->    	              
+            <div id="content">	
+            	<div id="breadcrumbs">
+				<p>
+				Vous êtes ici :
+			    <?php echo $this->navigation()
+			                    ->breadcrumbs()
+			                    ->setMinDepth(0)
+			                    ->setSeparator(' / ')
+			                    ->setRenderInvisible(true) ?>
+			</p>
+		</div>		
+                <div class="post">
+                    <h2><a href="#">Information</a></h2>
+                    <?php echo $this->layout()->content; ?>
+      </div>			              
+            </div><!-- content -->                    
+            <div class="clearing">&nbsp;</div>   
+    </div></div><!-- main --><!-- main2 -->
+    <div id="footer">
+        <p>Copyright &copy; 2011</p>
+    </div>
+<div style="text-align: center; font-size: 0.75em;"></div>
+     <?php echo $this->inlineScript() . PHP_EOL ?>
+</body>
+</html>

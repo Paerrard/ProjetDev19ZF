@@ -1,0 +1,5 @@
+<h3><?php echo $this->category->getLabel()?></h3>
+<?php 
+foreach ($this->category->getArticles() as $article) {
+	echo '<h4><a href="' . $this->url(array('id' => $article->getId()), 'article2') . '">' . $article->getTitle() . '</a></h4>';
+}
