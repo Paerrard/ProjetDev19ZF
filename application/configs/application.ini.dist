@@ -1,0 +1,64 @@
+[production]
+phpSettings.display_startup_errors = 0
+phpSettings.display_errors = 0
+phpSettings.error_log = ROOT_PATH "/var/log/php.log"
+phpSettings.date.timezone = "Europe/Paris"
+phpSettings.memory_limit = "128M"
+phpSettings.max_execution_time = 5
+phpSettings.session.use_cookies = 1
+phpSettings.session.use_only_cookies = 1
+phpSettings.session.use_trans_sid = 0
+phpSettings.session.cookie_httponly = 1
+phpSettings.session.coolie_lifetime = 0
+phpSettings.session.cookie_domain = "domain.tld"
+phpSettings.session.cookie_secure = 0
+phpSettings.session.hash_function = 1
+phpSettings.session.hash_bits_per_character = 6
+phpSettings.session.name = "app1"
+phpSettings.session.entropy_file = "/dev/urandom"
+phpSettings.session.entropy_length = 32
+phpSettings.session.gc_maxlifetime = 600
+phpSettings.session.gc_divisor = 250
+phpSettings.session.gc_probability = 1
+phpSettings.session.save_path = ROOT_PATH "/var/session"
+phpSettings.soap.wsdl_cache_enabled = 1
+
+appnamespace = "Application"
+
+bootstrap.path = APPLICATION_PATH "/Bootstrap.php"
+bootstrap.class = "Bootstrap"
+
+resources.frontController.controllerDirectory = APPLICATION_PATH "/controllers"
+resources.frontController.params.displayExceptions = 0
+resources.frontController.plugins[] = "Application_Plugin_Navigation"
+
+resources.db.adapter = "pdo_mysql"
+resources.db.params.host = "host"
+resources.db.params.username = "dbuser"
+resources.db.params.password = "dbpasswd"
+resources.db.params.dbname = "base"
+resources.db.params.charset = "UTF8"
+
+resources.layout.layoutPath = APPLICATION_PATH "/layouts"
+
+resources.view.doctype = "HTML5"
+resources.view.charset = "UTF-8"
+resources.view.contentType = "text/html;charset=UTF-8"
+
+resources.translate.adapter = "array"
+resources.translate.content = APPLICATION_PATH "/i18n"
+
+[staging : production]
+
+[testing : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+
+[development : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+phpSettings.soap.wsdl_cache_enabled = 0
+phpSettings.session.gc_divisor = 10
+resources.frontController.params.displayExceptions = 1
+
+
