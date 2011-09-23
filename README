@@ -1,1 +1,6 @@
-test2;
+INSTALL
+=======
+Renommez application/configs/application.ini.dist en application.ini
+Modifiez les valeurs de session.cookie.domain
+et de la base de données (resources.db...)
+
